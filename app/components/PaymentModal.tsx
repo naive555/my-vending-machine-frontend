@@ -28,18 +28,26 @@ export default function PaymentModal({
       <h2 className="text-lg font-bold mb-2">Buy: {selected.name}</h2>
 
       <div className="grid grid-cols-2 gap-2">
-        {VALID_DENOMS.map((denom) => (
-          <div key={denom}>
-            <label className="text-sm font-semibold">{denom} x</label>
-            <input
-              type="number"
-              min={0}
-              value={payment[denom] || 0}
-              onChange={(e) => updateDenom(denom, Number(e.target.value))}
-              className="border p-2 w-full rounded"
-            />
-          </div>
-        ))}
+        {VALID_DENOMS.map((denom) => {
+          const inputId = `denom-${denom}`;
+          return (
+            <div key={denom}>
+              <label htmlFor={inputId} className="text-sm font-semibold">
+                {denom} x
+              </label>
+
+              <input
+                id={inputId}
+                type="number"
+                placeholder={`enter payment ${denom}`}
+                min={0}
+                value={payment[denom] || 0}
+                onChange={(e) => updateDenom(denom, Number(e.target.value))}
+                className="border p-2 w-full rounded"
+              />
+            </div>
+          );
+        })}
       </div>
 
       <button
