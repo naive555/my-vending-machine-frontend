@@ -20,7 +20,7 @@ build
 # Env
 .env
 .env.*
-!.env.example
+!.env.docker
 
 # Git / IDE
 .git
