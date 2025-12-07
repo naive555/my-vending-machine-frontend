@@ -47,11 +47,6 @@ Check out the Next.js deployment documentation for more details.
   - ProductList component
   - PaymentModal component (input updates, purchase flow, change display)
 
-### ✔ Improved Type Safety
-
-- Fixed `ProductWithStock` type issues by ensuring `image_url` is always `string | undefined` (no `null`)
-- Adjusted test mocks to satisfy strict TypeScript definitions
-
 ### ✔ Docker & Deployment
 
 - Added an optimized `.dockerignore` for Next.js
